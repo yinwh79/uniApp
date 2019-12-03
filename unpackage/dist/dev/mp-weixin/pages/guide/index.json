@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "上传基本信息",
+  "usingComponents": {
+    "q-s-picker-custom": "/components/QS-inputs-split/elements/QS-picker-custom/index"
+  }
+}

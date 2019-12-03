@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"webApp","entryPagePath":"pages/login/login.html","page":{"pages/login/login.html":{"window":{"navigationBarTitleText":"登陆/注册","usingComponents":{}}},"pages/index/index.html":{"window":{"navigationBarTitleText":"首页","titleNView":false,"usingComponents":{}}},"pages/personal/personal.html":{"window":{"navigationBarTitleText":"我的","usingComponents":{}}},"pages/patients/patients.html":{"window":{"navigationBarTitleText":"患者","usingComponents":{}}},"pages/guide/index.html":{"window":{"navigationBarTitleText":"上传基本信息","usingComponents":{"q-s-picker-custom":"/components/QS-inputs-split/elements/QS-picker-custom/index"}}},"pages/guide/guide.html":{"window":{"navigationBarTitleText":"上传证件","usingComponents":{}}},"pages/guide/success.html":{"window":{"navigationBarTitleText":"认证成功","usingComponents":{}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"#7A7E83","selectedColor":"#2385fc","backgroundColor":"#ffffff","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/image/home.png","selectedIconPath":"static/image/home_xz.png","text":"首 页"},{"pagePath":"pages/patients/patients.html","iconPath":"static/image/par.png","selectedIconPath":"static/image/par_xz.png","text":"患 者"},{"pagePath":"pages/personal/personal.html","iconPath":"static/image/ims.png","selectedIconPath":"static/image/ims_zx.png","text":"我 的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/login/login","pages/index/index","pages/personal/personal","pages/patients/patients","pages/guide/index","pages/guide/guide","pages/guide/success"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.4.2","usingComponents":{}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

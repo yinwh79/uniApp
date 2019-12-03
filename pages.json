@@ -1,0 +1,76 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/login/login",
+		    "style" : {
+				"navigationBarTitleText":"登陆/注册"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText":"首页",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/personal/personal",
+            "style" : {
+				"navigationBarTitleText": "我的"
+			}
+        }
+        ,{
+            "path" : "pages/patients/patients",
+            "style" : {
+				"navigationBarTitleText": "患者"
+			}
+        }
+        ,{
+            "path" : "pages/guide/index",
+            "style" : {
+				"navigationBarTitleText":"上传基本信息"
+			}
+        }
+        ,{
+		    "path" : "pages/guide/guide",
+		    "style" : {
+				"navigationBarTitleText":"上传证件"
+			}
+		},{
+            "path" : "pages/guide/success",
+            "style" : {
+				"navigationBarTitleText":"认证成功"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#2385fc",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/image/home.png",
+	        "selectedIconPath": "static/image/home_xz.png",
+	        "text": "首 页"
+	    }, {
+	        "pagePath": "pages/patients/patients",
+	        "iconPath": "static/image/par.png",
+	        "selectedIconPath": "static/image/par_xz.png",
+	        "text": "患 者"
+	    }, {
+	        "pagePath": "pages/personal/personal",
+	        "iconPath": "static/image/ims.png",
+	        "selectedIconPath": "static/image/ims_zx.png",
+	        "text": "我 的"
+	    }]
+	}
+}

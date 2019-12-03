@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/personal/personal",
+    "pages/patients/patients",
+    "pages/guide/index",
+    "pages/guide/guide",
+    "pages/guide/success"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#2385fc",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/home.png",
+        "selectedIconPath": "static/image/home_xz.png",
+        "text": "首 页"
+      },
+      {
+        "pagePath": "pages/patients/patients",
+        "iconPath": "static/image/par.png",
+        "selectedIconPath": "static/image/par_xz.png",
+        "text": "患 者"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "static/image/ims.png",
+        "selectedIconPath": "static/image/ims_zx.png",
+        "text": "我 的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "webApp",
+  "compilerVersion": "2.4.2",
+  "usingComponents": {}
+}
