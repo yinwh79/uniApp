@@ -1509,7 +1509,114 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 124:
+/***/ 14:
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 148:
 /*!****************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/js/app.js ***!
   \****************************************************************************************/
@@ -1517,13 +1624,13 @@ uni$1;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 125));var _log = _interopRequireDefault(__webpack_require__(/*! ../config/js/log */ 128));
-var _picker = __webpack_require__(/*! ../config/js/picker */ 129);
-var _interfaces = _interopRequireDefault(__webpack_require__(/*! ../config/js/interfaces */ 130));
-var _input = __webpack_require__(/*! ../config/js/input */ 131);
-var _pics = __webpack_require__(/*! ../config/js/pics */ 132);
-var _sms = _interopRequireDefault(__webpack_require__(/*! ../config/js/sms */ 134));
-var _Msg = __webpack_require__(/*! ./Msg.js */ 133);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 149));var _log = _interopRequireDefault(__webpack_require__(/*! ../config/js/log */ 152));
+var _picker = __webpack_require__(/*! ../config/js/picker */ 153);
+var _interfaces = _interopRequireDefault(__webpack_require__(/*! ../config/js/interfaces */ 154));
+var _input = __webpack_require__(/*! ../config/js/input */ 155);
+var _pics = __webpack_require__(/*! ../config/js/pics */ 156);
+var _sms = _interopRequireDefault(__webpack_require__(/*! ../config/js/sms */ 158));
+var _Msg = __webpack_require__(/*! ./Msg.js */ 157);
 
 
 
@@ -1675,7 +1782,7 @@ var _Msg = __webpack_require__(/*! ./Msg.js */ 133);
 
 
 
-var _QSForm = _interopRequireDefault(__webpack_require__(/*! ./QSForm.js */ 135));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var Sys = uni.getSystemInfoSync();var getPickerAsyncData = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(obj) {var _this, value, index, launch, datas, oldValue, customId, linkageNum, data_0, data_1, sendData, newData_1, _newData_, newData_2, _newData_2, _newData_3;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0: // picker-custom与picker-custom2的逐级获取数据函数
+var _QSForm = _interopRequireDefault(__webpack_require__(/*! ./QSForm.js */ 159));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var Sys = uni.getSystemInfoSync();var getPickerAsyncData = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(obj) {var _this, value, index, launch, datas, oldValue, customId, linkageNum, data_0, data_1, sendData, newData_1, _newData_, newData_2, _newData_2, _newData_3;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0: // picker-custom与picker-custom2的逐级获取数据函数
             _this = this;_this.waiting = true; // 在获取数据时不许用户点确定
             obj.linkageNum = Number(obj.linkageNum);value = obj.value, index = obj.index, launch = obj.launch, datas = obj.datas, oldValue = obj.oldValue, customId = obj.customId, linkageNum = obj.linkageNum; // picker的value值， 需改变数据的变量名， 是否初始化时使用该函数，页面当前数据: {data_0: 第一列数据, data_1: 第二列数据, data_2: 第三列数据}, 旧的picker的value值, 逐级获取数据时决定携带数据的变量名
             data_0 = datas.data_0, data_1 = datas.data_1; // 页面当前数据: {data_0: 第一列数据, data_1: 第二列数据, data_2: 第三列数据}
@@ -1990,19 +2097,19 @@ function isEmpty(val) {
 
 /***/ }),
 
-/***/ 125:
+/***/ 149:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 126);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 150);
 
 
 /***/ }),
 
-/***/ 126:
+/***/ 150:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -2033,7 +2140,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 127);
+module.exports = __webpack_require__(/*! ./runtime */ 151);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -2050,7 +2157,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 127:
+/***/ 151:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -2782,7 +2889,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 128:
+/***/ 152:
 /*!***********************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/log.js ***!
   \***********************************************************************************************/
@@ -2800,7 +2907,7 @@ function log(t) {
 
 /***/ }),
 
-/***/ 129:
+/***/ 153:
 /*!**************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/picker.js ***!
   \**************************************************************************************************/
@@ -2808,7 +2915,7 @@ function log(t) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSendData = getSendData;exports.getAsyncDataFc = getAsyncDataFc;var _log = _interopRequireDefault(__webpack_require__(/*! ./log */ 128));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getSendData = getSendData;exports.getAsyncDataFc = getAsyncDataFc;var _log = _interopRequireDefault(__webpack_require__(/*! ./log */ 152));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 /**
                                                                                                                                                                                                                                                                                                         * picker逐级获取-获取访问接口时的自定义携带参数
                                                                                                                                                                                                                                                                                                         * @param {Object} obj
@@ -2977,7 +3084,7 @@ function getAsyncDataFc(obj) {// 访问接口获取picker自定义逐级数据
 
 /***/ }),
 
-/***/ 130:
+/***/ 154:
 /*!******************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/interfaces.js ***!
   \******************************************************************************************************/
@@ -2992,7 +3099,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 131:
+/***/ 155:
 /*!*************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/input.js ***!
   \*************************************************************************************************/
@@ -3000,7 +3107,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.inputCustomTapFc = inputCustomTapFc;exports.inputCustomTapCatchFc = inputCustomTapCatchFc;exports.verifyTypeObj = exports.filterTypeObj = void 0;var _log = _interopRequireDefault(__webpack_require__(/*! ./log.js */ 128));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.inputCustomTapFc = inputCustomTapFc;exports.inputCustomTapCatchFc = inputCustomTapCatchFc;exports.verifyTypeObj = exports.filterTypeObj = void 0;var _log = _interopRequireDefault(__webpack_require__(/*! ./log.js */ 152));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 /**
                                                                                                                                                                                                                                                                                                                                                                                           * inputTap custom类型点击触发函数
                                                                                                                                                                                                                                                                                                                                                                                           * @param {any} customId
@@ -3105,7 +3212,7 @@ var verifyTypeObj = {
 
 /***/ }),
 
-/***/ 132:
+/***/ 156:
 /*!************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/pics.js ***!
   \************************************************************************************************/
@@ -3113,9 +3220,9 @@ var verifyTypeObj = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.UpLoadFile = UpLoadFile;exports.pics_splice = pics_splice;var _log = _interopRequireDefault(__webpack_require__(/*! ./log */ 128));
-var _interfaces = _interopRequireDefault(__webpack_require__(/*! ./interfaces */ 130));
-var _Msg = __webpack_require__(/*! ../../js/Msg.js */ 133);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.UpLoadFile = UpLoadFile;exports.pics_splice = pics_splice;var _log = _interopRequireDefault(__webpack_require__(/*! ./log */ 152));
+var _interfaces = _interopRequireDefault(__webpack_require__(/*! ./interfaces */ 154));
+var _Msg = __webpack_require__(/*! ../../js/Msg.js */ 157);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * 上传文件方法
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   * @param {any} customId
@@ -3203,7 +3310,7 @@ function renderUrlData(u, d) {
 
 /***/ }),
 
-/***/ 133:
+/***/ 157:
 /*!****************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/js/Msg.js ***!
   \****************************************************************************************/
@@ -3257,7 +3364,7 @@ function Msg(obj) {var
 
 /***/ }),
 
-/***/ 134:
+/***/ 158:
 /*!***********************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/config/js/sms.js ***!
   \***********************************************************************************************/
@@ -3281,7 +3388,7 @@ function sendSMS(phone) {// 发送验证码方法, 需返回生成的验证码
 
 /***/ }),
 
-/***/ 135:
+/***/ 159:
 /*!*******************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/js/QSForm.js ***!
   \*******************************************************************************************/
@@ -3289,7 +3396,7 @@ function sendSMS(phone) {// 发送验证码方法, 需返回生成的验证码
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _Msg = _interopRequireDefault(__webpack_require__(/*! ./Msg.js */ 133));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _Msg = _interopRequireDefault(__webpack_require__(/*! ./Msg.js */ 157));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
 
 QSForm = /*#__PURE__*/function () {
   function QSForm() {_classCallCheck(this, QSForm);
@@ -3350,7 +3457,7 @@ QSFormObj;exports.default = _default;
 
 /***/ }),
 
-/***/ 136:
+/***/ 160:
 /*!**************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/js/QSInputsMixin.js ***!
   \**************************************************************************************************/
@@ -3358,7 +3465,7 @@ QSFormObj;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _app2 = _interopRequireDefault(__webpack_require__(/*! ./app.js */ 124));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _app2 = _interopRequireDefault(__webpack_require__(/*! ./app.js */ 148));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 var publicProps = {
   name: {
@@ -3565,7 +3672,7 @@ function _default()
 
 /***/ }),
 
-/***/ 137:
+/***/ 161:
 /*!********************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/js/QSInputsPickerMixin.js ***!
   \********************************************************************************************************/
@@ -3654,114 +3761,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 14:
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 152:
+/***/ 176:
 /*!***********************************************************************************************************************!*\
   !*** /Users/xywy/Desktop/HBuilderProjects/webApp/components/QS-inputs-split/template/QS-picker/js/QS-picker-mixin.js ***!
   \***********************************************************************************************************************/
@@ -10813,7 +10813,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/patients/patients": { "navigationBarTitleText": "患者管理" }, "pages/login/login": { "navigationBarTitleText": "登陆/注册" }, "pages/index/index": { "navigationBarTitleText": "首页" }, "pages/personal/personal": { "navigationBarTitleText": "个人中心" }, "pages/guide/index": { "navigationBarTitleText": "上传基本信息" }, "pages/guide/guide": { "navigationBarTitleText": "上传证件" }, "pages/guide/success": { "navigationBarTitleText": "认证成功" }, "pages/patients/group": { "navigationBarTitleText": "分组管理" }, "pages/patients/addGroup": { "navigationBarTitleText": "添加分组" }, "pages/patients/grouping": { "navigationBarTitleText": "分组详情" }, "pages/patients/diagnosis": { "navigationBarTitleText": "诊后报道" }, "pages/personal/wallet/index": { "navigationBarTitleText": "我的钱包" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#f5f5f5" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/personal/wallet/bankCard": { "navigationBarTitleText": "我的银行卡", "usingComponents": {} }, "pages/login/login": { "navigationBarTitleText": "登陆/注册", "usingComponents": {} }, "pages/index/index": { "navigationBarTitleText": "首页", "usingComponents": {} }, "pages/personal/personal": { "navigationBarTitleText": "个人中心", "usingComponents": {} }, "pages/patients/patients": { "navigationBarTitleText": "患者管理", "usingComponents": { "uni-badge": "/node-modules/@dcloudio/uni-ui/lib/uni-badge/uni-badge" } }, "pages/guide/index": { "navigationBarTitleText": "上传基本信息", "usingComponents": { "q-s-picker-custom": "/components/QS-inputs-split/elements/QS-picker-custom/index" } }, "pages/guide/guide": { "navigationBarTitleText": "上传证件", "usingComponents": {} }, "pages/guide/success": { "navigationBarTitleText": "认证成功", "usingComponents": {} }, "pages/patients/group": { "navigationBarTitleText": "分组管理", "usingComponents": {} }, "pages/patients/addGroup": { "navigationBarTitleText": "添加分组", "usingComponents": {} }, "pages/patients/grouping": { "navigationBarTitleText": "分组详情", "usingComponents": {} }, "pages/patients/diagnosis": { "navigationBarTitleText": "诊后报道", "usingComponents": {} }, "pages/personal/wallet/index": { "navigationBarTitleText": "我的钱包", "usingComponents": {} }, "pages/personal/wallet/theDetail": { "navigationBarTitleText": "我的钱包", "usingComponents": {} }, "pages/personal/wallet/withdrawal": { "navigationBarTitleText": "提现记录", "usingComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#f5f5f5" } };exports.default = _default;
 
 /***/ }),
 

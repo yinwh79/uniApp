@@ -41,4 +41,79 @@
 .he{
 	height: 100vh;
 }
+.list-money {
+	background-color: #FFFFFF;
+	margin-top: 30rpx;
+}
+.list-money .list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100rpx;
+	margin: 0 30rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.list-money .gd{
+	width: 16rpx;
+	height: 27rpx;
+}
+/**
+ * 我的公共
+ */
+.listPers{
+	background-color: #FFFFFF;
+}
+.listPers .feiyong-arrow{
+	padding: 0 23rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.listPers .feiyong{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.listPers .feiyong text{
+	font-size: 28rpx;
+	color: #4a4a4a;
+}
+.listPers .feiyong-arrow .feiyong image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 13rpx;
+	margin-right: 40rpx;
+	-webkit-flex-shrink:0;
+	    -ms-flex-negative:0;
+	        flex-shrink:0;
+}
+.listPers .feiyong-arrow .arrow{
+	width: 16rpx;
+	height: 27rpx;
+}
 

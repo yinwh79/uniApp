@@ -1,12 +1,6 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-		    "path" : "pages/patients/patients",
-		    "style" : {
-				"navigationBarTitleText": "患者管理"
-			}
-		}
-		,{
 		    "path" : "pages/login/login",
 		    "style" : {
 				"navigationBarTitleText":"登陆/注册"
@@ -24,6 +18,11 @@
 		    "path" : "pages/personal/personal",
 		    "style" : {
 				"navigationBarTitleText": "个人中心"
+			}
+		},{
+		    "path" : "pages/patients/patients",
+		    "style" : {
+				"navigationBarTitleText": "患者管理"
 			}
 		}
 		,
@@ -74,6 +73,24 @@
 				"navigationBarTitleText":"我的钱包"
 			}
         }
+        ,{
+            "path" : "pages/personal/wallet/theDetail",
+            "style" : {
+				"navigationBarTitleText":"我的钱包"
+			}
+        }
+        ,{
+            "path" : "pages/personal/wallet/withdrawal",
+            "style" : {
+				"navigationBarTitleText":"提现记录"
+			}
+        },
+		{
+		    "path" : "pages/personal/wallet/bankCard",
+		    "style" : {
+				"navigationBarTitleText":"我的银行卡"
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

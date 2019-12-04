@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/patients/patients",
     "pages/login/login",
     "pages/index/index",
     "pages/personal/personal",
+    "pages/patients/patients",
     "pages/guide/index",
     "pages/guide/guide",
     "pages/guide/success",
@@ -11,7 +11,10 @@
     "pages/patients/addGroup",
     "pages/patients/grouping",
     "pages/patients/diagnosis",
-    "pages/personal/wallet/index"
+    "pages/personal/wallet/index",
+    "pages/personal/wallet/theDetail",
+    "pages/personal/wallet/withdrawal",
+    "pages/personal/wallet/bankCard"
   ],
   "subPackages": [],
   "window": {

@@ -21,15 +21,15 @@
 			</view>
 		</view>
 		<view class="list-money">
-			<view class="list">
+			<view class="list" @tap="incomeDetails">
 				<text>收入明细</text>
 				<image src="../../../static/image/arrow.png" mode="" class="gd"></image>
 			</view>
-			<view class="list">
+			<view class="list" @tap="Withdrawal">
 				<text>提现记录</text>
 				<image src="../../../static/image/arrow.png" mode="" class="gd"></image>
 			</view>
-			<view class="list">
+			<view class="list" @tap="bankCard">
 				<text>我的银行卡</text>
 				<image src="../../../static/image/arrow.png" mode="" class="gd"></image>
 			</view>
@@ -55,7 +55,21 @@
 			}
 		},
 		methods: {
-			
+			incomeDetails() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/theDetail'
+				});
+			},
+			Withdrawal() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/withdrawal'
+				});
+			},
+			bankCard() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/bankCard'
+				});
+			}
 		}
 	}
 </script>
@@ -102,22 +116,6 @@
 	font-size: 30upx;
 	color: #999999;
 	margin-top: 10upx;
-}
-.list-money {
-	background-color: #FFFFFF;
-	margin-top: 30upx;
-}
-.list-money .list{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100upx;
-	margin: 0 30upx;
-	border-bottom: 1upx solid #e4e4e4;
-}
-.list-money .gd{
-	width: 16upx;
-	height: 27upx;
 }
 .textNext{
 	width: 90%;

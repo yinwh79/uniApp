@@ -168,34 +168,4 @@
 	color: #333333;
 	margin-top: 10upx;
 }
-.listPers{
-	background-color: #FFFFFF;
-}
-.listPers .feiyong-arrow{
-	padding: 0 23upx;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100upx;
-	border-bottom: 1upx solid #e4e4e4;
-}
-.listPers .feiyong{
-	display: flex;
-	align-items: center;
-}
-.listPers .feiyong text{
-	font-size: 28upx;
-	color: #4a4a4a;
-}
-.listPers .feiyong-arrow .feiyong image{
-	width: 40upx;
-	height: 40upx;
-	margin-left: 13upx;
-	margin-right: 40upx;
-	flex-shrink:0;
-}
-.listPers .feiyong-arrow .arrow{
-	width: 16upx;
-	height: 27upx;
-}
 </style>
