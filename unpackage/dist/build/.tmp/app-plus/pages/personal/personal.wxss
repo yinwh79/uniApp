@@ -1,0 +1,146 @@
+
+.headerInformation{
+	background-color: #FFFFFF;
+	margin:20rpx 0;
+}
+.headerInformation .doctoring{
+	width: 111rpx;
+	height: 111rpx;
+	margin-right: 26rpx;
+}
+.headerInformation .certificate{
+	width: 170rpx;
+	height: 128rpx;
+}
+.Information{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 20rpx 0 20rpx 30rpx;
+}
+.name-gender-address{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.name-gender-address .gender{
+	width: 20rpx;
+	height: 34rpx;
+	margin: 0 18rpx;
+}
+.name-gender-address  .address{
+	font-size: 28rpx;
+	color: #333333;
+}
+.name-gender-address  .address image{
+	width: 22rpx;
+	height: 26rpx;
+	margin-right: 10rpx;
+}
+.name-gender{
+	margin-bottom: 10rpx;
+	color: #333333;
+}
+.name-gender .name{
+	font-size: 34rpx;
+}
+.name-gender .department{
+	font-size: 28rpx;
+}
+.detail{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
+	padding: 30rpx 0;
+}
+.detail .dbsob{
+	border-left: 1rpx solid #dddddd;
+	border-right: 1rpx solid #dddddd;
+}
+.detail view{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 100%;
+}
+.detail .title{
+	font-size: 44rpx;
+	color: #4d9dff;
+}
+.detail .text{
+	font-size: 26rpx;
+	color: #333333;
+	margin-top: 10rpx;
+}
+.listPers{
+	background-color: #FFFFFF;
+}
+.listPers .feiyong-arrow{
+	padding: 0 23rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.listPers .feiyong{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.listPers .feiyong text{
+	font-size: 28rpx;
+	color: #4a4a4a;
+}
+.listPers .feiyong-arrow .feiyong image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 13rpx;
+	margin-right: 40rpx;
+	-webkit-flex-shrink:0;
+	    -ms-flex-negative:0;
+	        flex-shrink:0;
+}
+.listPers .feiyong-arrow .arrow{
+	width: 16rpx;
+	height: 27rpx;
+}
+

@@ -1,0 +1,63 @@
+
+.bgColor{
+		height: 100vh;
+		overflow: hidden;
+}
+.addgroup{
+	background-color: #FFFFFF;
+	height: 100rpx;
+	padding: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-top: 30rpx;
+}
+.addgroup .name{
+	color:#999999 ;
+	font-size: 32rpx;
+	margin-right: 30rpx;
+}
+.groupLists{
+	margin-top: 30rpx;
+}
+.groupLists .list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 140rpx;
+	background: #FFFFFF;
+	padding: 0 30rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.groupLists .list:last-child{
+	border-bottom: none;
+}
+.groupLists .name{
+	color: #333333;
+	font-size: 32rpx;
+}
+.groupLists .age{
+	font-size: 26rpx;
+	color: #333333;
+}
+.groupLists .sex{
+	width: 17rpx;
+	height: 29rpx;
+	margin: 0 20rpx;
+}
+.groupLists .headImg{
+	width: 90rpx;
+	height: 90rpx;
+	margin-right: 40rpx;
+}
+

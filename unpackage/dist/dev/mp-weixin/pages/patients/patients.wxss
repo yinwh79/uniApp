@@ -1,0 +1,112 @@
+
+.search{
+	padding:20rpx 30rpx;
+}
+.search .searchAction{
+	width: 100%;
+	height: 79rpx;
+	background-color: #FFFFFF;
+	border-radius: 40rpx;
+	text-align: center;
+	font-size: 30rpx;
+	border:1rpx solid #e4e4e4;
+}
+.patList{
+	margin-bottom: 20rpx;
+	background: #FFFFFF;
+}
+.patList .zhbd{
+	border-bottom: 1rpx solid #e4e4e4;
+	margin: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100rpx;
+}
+.patList .zhbd .hicon{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.patList .zhbd .hicon image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	margin-left: 10rpx;
+}
+.patList .zhbd .hicon text{
+	font-size: 32rpx;
+	color: #333333;
+}
+.patList .zhbd .gd{
+	width: 16rpx;
+	height: 27rpx;
+}
+.llist{
+	background-color:#FFFFFF;
+}
+.patients{
+	border-bottom: 1rpx solid #e4e4e4;
+	margin: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	height: 144rpx;
+}
+.patients .headImg{
+	width: 90rpx;
+	height: 90rpx;
+	margin-right: 40rpx;
+}
+.patients .sex{
+	width: 17rpx;
+	height: 29rpx;
+	margin: 0 20rpx;
+}
+.patients .patients-title{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.patients .note{
+	font-size: 24rpx;
+	color: #666666;
+}
+.patients .dataTime{
+	font-size: 20rpx;
+	color: #999999;
+	margin-top: 30rpx;
+}
+.patients .title{
+	font-size: 32rpx;
+	color: #333333;
+}
+.patients .age{
+	font-size: 26rpx;
+	color: #333333;
+}
+

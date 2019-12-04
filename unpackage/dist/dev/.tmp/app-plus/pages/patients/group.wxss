@@ -1,0 +1,58 @@
+
+.textNext{
+	padding: 0 40rpx;
+	margin-top: 100rpx;
+}
+.groupList{
+	background-color: #FFFFFF;
+	margin-top: 30rpx;
+}
+.groupList .gd{
+	width: 16rpx;
+	height: 27rpx;
+}
+.groupList .list{
+	margin: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 136rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.groupList .list:last-child{
+	border-bottom: none;
+}
+.groupList  .list .title{
+	font-size: 32rpx;
+	color: #333333;
+}
+.groupList  .title-alert{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.groupList  .list .alert{
+	color: #dddddd;
+	font-size: 26rpx;
+	margin-top: 10rpx;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
+}
+

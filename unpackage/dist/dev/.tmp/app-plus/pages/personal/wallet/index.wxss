@@ -1,0 +1,98 @@
+
+.integral {
+	margin-top: 30rpx;
+	background-color: #FFFFFF;
+	padding-top: 30rpx;
+}
+.integral .money{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.integral .money .text{
+	font-size: 30rpx;
+	color: #999999;
+}
+.integral .money .balance{
+	font-size:80rpx;
+	color:#f98e47;
+}
+.detail{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
+	padding: 30rpx 0;
+}
+.detail .dbsob{
+	border-left: 1rpx solid #dddddd;
+	border-right: 1rpx solid #dddddd;
+}
+.detail view{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 100%;
+}
+.detail .title{
+	font-size: 44rpx;
+	color: #f98e47;
+}
+.detail .text{
+	font-size: 30rpx;
+	color: #999999;
+	margin-top: 10rpx;
+}
+.list-money {
+	background-color: #FFFFFF;
+	margin-top: 30rpx;
+}
+.list-money .list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100rpx;
+	margin: 0 30rpx;
+	border-bottom: 1rpx solid #e4e4e4;
+}
+.list-money .gd{
+	width: 16rpx;
+	height: 27rpx;
+}
+.textNext{
+	width: 90%;
+	margin: 100rpx auto 0;
+}
+

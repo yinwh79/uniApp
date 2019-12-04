@@ -1,0 +1,1 @@
+<view class="bgColor"><view class="addgroup"><text class="name">名称</text><input type="text" value="糖尿病"/></view><view class="textNext"><button type="primary" data-event-opts="{{[['tap',[['nextPag',['$event']]]]]}}" bindtap="__e">完成</button></view></view>
