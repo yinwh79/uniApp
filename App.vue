@@ -28,5 +28,9 @@
 	}
 	.bgColor{
 		background-color: #f5f5f5;
+		overflow: hidden;
+	}
+	.he{
+		height: 100vh;
 	}
 </style>

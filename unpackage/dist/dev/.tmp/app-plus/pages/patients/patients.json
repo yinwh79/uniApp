@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "患者",
-  "usingComponents": {}
+  "navigationBarTitleText": "患者管理",
+  "usingComponents": {
+    "uni-badge": "/node-modules/@dcloudio/uni-ui/lib/uni-badge/uni-badge"
+  }
 }

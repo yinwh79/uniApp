@@ -42,7 +42,7 @@
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "dark",
-      "background": "#F8F8F8"
+      "background": "#FFFFFF"
     },
     "usingComponents": true,
     "nvueCompiler": "uni-app",
@@ -123,7 +123,11 @@
           "text": "我 的"
         }
       ],
-      "height": "50px"
+      "height": "50px",
+      "child": [
+        "lauchwebview"
+      ],
+      "selected": 1
     }
   }
 }

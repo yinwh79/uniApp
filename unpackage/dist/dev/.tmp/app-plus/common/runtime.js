@@ -102,11 +102,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/QS-inputs-split/elements/QS-picker-custom/index":1,"components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom":1,"components/QS-inputs-split/template/template":1,"components/QS-inputs-split/uniIcons/uni-icons":1,"components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate":1};
+/******/ 		var cssChunks = {"node-modules/@dcloudio/uni-ui/lib/uni-badge/uni-badge":1,"components/QS-inputs-split/elements/QS-picker-custom/index":1,"components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom":1,"components/QS-inputs-split/template/template":1,"components/QS-inputs-split/uniIcons/uni-icons":1,"components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/QS-inputs-split/elements/QS-picker-custom/index":"components/QS-inputs-split/elements/QS-picker-custom/index","components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom":"components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom","components/QS-inputs-split/template/template":"components/QS-inputs-split/template/template","components/QS-inputs-split/uniIcons/uni-icons":"components/QS-inputs-split/uniIcons/uni-icons","components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate":"components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"node-modules/@dcloudio/uni-ui/lib/uni-badge/uni-badge":"node-modules/@dcloudio/uni-ui/lib/uni-badge/uni-badge","components/QS-inputs-split/elements/QS-picker-custom/index":"components/QS-inputs-split/elements/QS-picker-custom/index","components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom":"components/QS-inputs-split/template/QS-picker/elements/QS-picker-custom","components/QS-inputs-split/template/template":"components/QS-inputs-split/template/template","components/QS-inputs-split/uniIcons/uni-icons":"components/QS-inputs-split/uniIcons/uni-icons","components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate":"components/QS-inputs-split/template/QS-picker/elements/QS-pickerTemplate"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

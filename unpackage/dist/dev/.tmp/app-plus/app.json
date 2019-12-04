@@ -1,18 +1,23 @@
 {
   "pages": [
+    "pages/patients/patients",
     "pages/login/login",
     "pages/index/index",
     "pages/personal/personal",
-    "pages/patients/patients",
     "pages/guide/index",
     "pages/guide/guide",
-    "pages/guide/success"
+    "pages/guide/success",
+    "pages/patients/group",
+    "pages/patients/addGroup",
+    "pages/patients/grouping",
+    "pages/patients/diagnosis",
+    "pages/personal/wallet/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f5f5f5"
   },
   "tabBar": {
     "color": "#7A7E83",

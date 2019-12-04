@@ -1,6 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/patients/patients",
+		    "style" : {
+				"navigationBarTitleText": "患者管理"
+			}
+		}
+		,{
 		    "path" : "pages/login/login",
 		    "style" : {
 				"navigationBarTitleText":"登陆/注册"
@@ -14,20 +20,14 @@
 					"titleNView": false
 				}
 			}
+		},{
+		    "path" : "pages/personal/personal",
+		    "style" : {
+				"navigationBarTitleText": "个人中心"
+			}
 		}
-	    ,{
-            "path" : "pages/personal/personal",
-            "style" : {
-				"navigationBarTitleText": "我的"
-			}
-        }
-        ,{
-            "path" : "pages/patients/patients",
-            "style" : {
-				"navigationBarTitleText": "患者"
-			}
-        }
-        ,{
+		,
+	    {
             "path" : "pages/guide/index",
             "style" : {
 				"navigationBarTitleText":"上传基本信息"
@@ -44,12 +44,42 @@
 				"navigationBarTitleText":"认证成功"
 			}
         }
+        ,{
+            "path" : "pages/patients/group",
+            "style" : {
+				"navigationBarTitleText":"分组管理"
+			}
+        }
+        ,{
+            "path" : "pages/patients/addGroup",
+            "style" : {
+				"navigationBarTitleText":"添加分组"
+			}
+        }
+        ,{
+            "path" : "pages/patients/grouping",
+            "style" : {
+				"navigationBarTitleText":"分组详情"
+			}
+        }
+        ,{
+            "path" : "pages/patients/diagnosis",
+            "style" : {
+				"navigationBarTitleText":"诊后报道"
+			}
+        }
+        ,{
+            "path" : "pages/personal/wallet/index",
+            "style" : {
+				"navigationBarTitleText":"我的钱包"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#f5f5f5"
 	},
 	"tabBar": {
 	    "color": "#7A7E83",
