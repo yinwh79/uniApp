@@ -9,7 +9,7 @@
 			</view>
 		</view>
 		<view class="list-money list-price">
-			<view class="list">
+			<view class="list" @tap="incomeDetails">
 				<view class="textarr">
 					<text>图文咨询</text>
 					<text class="date">2019-02-11</text>
@@ -19,7 +19,7 @@
 					<image src="../../../static/image/arrow.png" mode="" class="gd"></image>
 				</view>
 			</view>
-			<view class="list">
+			<view class="list" @tap="incomeDetails">
 				<view class="textarr">
 					<text>图文咨询</text>
 					<text class="date">2019-02-08</text>
@@ -29,7 +29,7 @@
 					<image src="../../../static/image/arrow.png" mode="" class="gd"></image>
 				</view>
 			</view>
-			<view class="list">
+			<view class="list" @tap="incomeDetails">
 				<view class="textarr">
 					<text>视频咨询</text>
 					<text class="date">2019-02-11</text>
@@ -61,7 +61,12 @@
 			}
 		},
 		methods: {
-			
+			//收入详情
+			incomeDetails(){
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/incomeDetails'
+				});
+			}
 		}
 	}
 </script>

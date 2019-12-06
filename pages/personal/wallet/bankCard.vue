@@ -35,11 +35,11 @@
 		<view class="textNext">
 			<!-- 只能用到微信小程序中 -->
 			<!--#ifdef MP-WEIXIN-->
-			<button type="button" class="loguin">添加银行卡</button>
+			<button type="button" class="loguin" @tap="binding">添加银行卡</button>
 			 <!-- #endif -->
 			 <!--除微信小程序平台其它平台都可以用 -->
 			 <!--#ifndef MP-WEIXIN-->
-			 <button type="primary">添加银行卡</button>
+			 <button type="primary" @tap="binding">添加银行卡</button>
 			 <!-- #endif -->
 		</view>
 	</view>
@@ -53,7 +53,11 @@
 			}
 		},
 		methods: {
-			
+			binding() {
+				uni.navigateTo({
+					url: '/pages/personal/wallet/binding'
+				});
+			}
 		}
 	}
 </script>

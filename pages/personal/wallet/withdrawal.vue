@@ -1,7 +1,7 @@
 <template>
 	<view class="bgColor he">
 		<view class="listPers withdra">
-			<view class="feiyong-arrow" @tap="wallet">
+			<view class="feiyong-arrow" @tap="failedWithdraw">
 				<view class="feiyong">
 					<image src="../../../static/image/audit.png" mode=""></image>
 					<view class="time-describe">
@@ -14,7 +14,7 @@
 					<image src="../../../static/image/arrow.png" mode="" class="arrow"></image>
 				</view>
 			</view>
-			<view class="feiyong-arrow" @tap="wallet">
+			<view class="feiyong-arrow" @tap="failedWithdraw">
 				<view class="feiyong">
 					<image src="../../../static/image/errors.png" mode=""></image>
 					<view class="time-describe">
@@ -27,7 +27,7 @@
 					<image src="../../../static/image/arrow.png" mode="" class="arrow"></image>
 				</view>
 			</view>
-			<view class="feiyong-arrow" @tap="wallet">
+			<view class="feiyong-arrow" @tap="failedWithdraw">
 				<view class="feiyong">
 					<image src="../../../static/image/transfer.png" mode=""></image>
 					<view class="time-describe">
@@ -40,7 +40,7 @@
 					<image src="../../../static/image/arrow.png" mode="" class="arrow"></image>
 				</view>
 			</view>
-			<view class="feiyong-arrow" @tap="wallet">
+			<view class="feiyong-arrow" @tap="HaveTransfer">
 				<view class="feiyong">
 					<image src="../../../static/image/successs.png" mode=""></image>
 					<view class="time-describe">
@@ -65,7 +65,22 @@
 			}
 		},
 		methods: {
-			
+			/**
+			 * 未能提现
+			 */
+			failedWithdraw() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/failedWithdraw'
+				});
+			},
+			/**
+			 * 成功提现
+			 */
+			HaveTransfer() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/successfulWithdrawal'
+				});
+			}
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<view class="bgColor" style="height: 98vh;">
+	<view class="bgColor" style="height: 100vh;">
 		<view class="headerInformation">
 			<view class="Information">
 				<view class="name-gender-address">
@@ -45,28 +45,28 @@
 				</view>
 				<image src="../../static/image/arrow.png" mode="" class="arrow"></image>
 			</view>
-			<view class="feiyong-arrow">
+			<view class="feiyong-arrow" @tap="prescription">
 				<view class="feiyong">
 					<image src="../../static/image/xinwen.png" mode=""></image>
 					<text>处方记录</text>
 				</view>
 				<image src="../../static/image/arrow.png" mode="" class="arrow"></image>
 			</view>
-			<view class="feiyong-arrow">
+			<view class="feiyong-arrow" @tap="professional">
 				<view class="feiyong">
 					<image src="../../static/image/professional.png" mode=""></image>
 					<text>职业点管理</text>
 				</view>
 				<image src="../../static/image/arrow.png" mode="" class="arrow"></image>
 			</view>
-			<view class="feiyong-arrow">
+			<view class="feiyong-arrow" @tap="thenPhrase">
 				<view class="feiyong">
 					<image src="../../static/image/zixuntousu.png" mode=""></image>
 					<text>常用语</text>
 				</view>
 				<image src="../../static/image/arrow.png" mode="" class="arrow"></image>
 			</view>
-			<view class="feiyong-arrow">
+			<view class="feiyong-arrow" @tap="system">
 				<view class="feiyong">
 					<image src="../../static/image/shezhi.png" mode=""></image>
 					<text>系统设置</text>
@@ -91,6 +91,26 @@
 				 */
 				uni.navigateTo({
 				    url: '/pages/personal/wallet/index'
+				});
+			},
+			system() {
+				uni.navigateTo({
+				    url: '/pages/personal/system/index'
+				});
+			},
+			professional() {
+				uni.navigateTo({
+				    url: '/pages/personal/professional/index'
+				});
+			},
+			thenPhrase() {
+				uni.navigateTo({
+				    url: '/pages/personal/thePhrase/index'
+				});
+			},
+			prescription() {
+				uni.navigateTo({
+					url: '/pages/personal/prescription/index'
 				});
 			}
 		}

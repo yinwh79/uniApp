@@ -37,11 +37,11 @@
 		<view class="textNext">
 			<!-- 只能用到微信小程序中 -->
 			<!--#ifdef MP-WEIXIN-->
-			<button type="button" class="loguin" @tap="nextPag">申请提现</button>
+			<button type="button" class="loguin" @tap="applyWithdrawal">申请提现</button>
 			 <!-- #endif -->
 			 <!--除微信小程序平台其它平台都可以用 -->
 			 <!--#ifndef MP-WEIXIN-->
-			 <button type="primary" @tap="nextPag">申请提现</button>
+			 <button type="primary" @tap="applyWithdrawal">申请提现</button>
 			 <!-- #endif -->
 		</view>
 	</view>
@@ -69,6 +69,14 @@
 				uni.navigateTo({
 				    url: '/pages/personal/wallet/bankCard'
 				});
+			},
+			/**
+			 * 申请提现
+			 */
+			applyWithdrawal() {
+				uni.navigateTo({
+				    url: '/pages/personal/wallet/applyWithdrawal'
+				});
 			}
 		}
 	}
@@ -88,6 +96,10 @@
 .integral .money .text{
 	font-size: 30upx;
 	color: #999999;
+}
+.list-money text{
+	font-size: 28upx;
+	color: #4a4a4a;
 }
 .integral .money .balance{
 	font-size:80upx;
